@@ -9,16 +9,19 @@ def on_press(key):
     if key == keyboard.Key.esc:
         esc=True
 
+def loop():
+    global type
+    type=input("Would you like to stop clicking after a certain number of seconds? (y/n) ")
+    if(not type.lower()=="y" and not type.lower()=="n"):
+        loop()
+        return
 #set up autoclicker settings
-type=input("Would you like to stop clicking after a certain number of seconds? (y/n) ")
-if(not type.lower()=="y" and not type.lower()=="n"):
-    raise("Invalid response recieved. This is literally the first part of the code so I'm not looping it. Just run it again.")
-
+loop()
 if(type.lower()=="n"):
     total=int(input("Number of times to click: "))
 else:
     total=int(input("Length of time to click for (seconds): "))
-delay=int(input("Delay between each click (seconds): "))
+delay=int(input("Delay per click (seconds): "))
 
 #wait for mouse click to begin clicking
 print("Click to start...")
