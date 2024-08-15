@@ -1,7 +1,6 @@
 from pynput.mouse import Button, Controller, Listener
 from pynput import keyboard
 import time
-
 #set up esc function
 esc=False
 count=0
