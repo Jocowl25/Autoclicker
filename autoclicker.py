@@ -4,6 +4,7 @@ import time
 
 #set up esc function
 esc=False
+count=0
 def on_press(key):
     global esc
     if key == keyboard.Key.esc:
@@ -45,6 +46,7 @@ if(type.lower()=="n"):
             break
         mouse.press(Button.left)
         mouse.release(Button.left)
+        count+=1
         time.sleep(delay)
 else:
     #clicks for a set amount of time
@@ -57,7 +59,9 @@ else:
             break
         mouse.press(Button.left)
         mouse.release(Button.left)
+        count+=1
         time.sleep(delay)
 
 if(not esc):
     print("Clicking complete.")
+print("You clicked "+str(count)+" times!")
