@@ -63,4 +63,4 @@ else:
 
 if(not esc):
     print("Clicking complete.")
-print("You clicked "+str(count)+" times!")
+print("Total clicks: "+str(count))
